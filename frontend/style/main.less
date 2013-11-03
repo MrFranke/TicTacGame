@@ -1,0 +1,117 @@
+@bgBody: #fff;
+
+html{
+    height: 100%;
+}
+
+body{
+    padding: 20px;
+    font-family: 'Andika', sans-serif;
+    color: #222;
+    background: @bgBody;
+    height: 100%;
+}
+
+a{
+    color: #36c;
+    text-decoration: underline;
+    cursor: pointer;
+    
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.players{
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    
+    h3{
+        margin-bottom: 0px;
+    }
+    .name{}
+    .score{}
+}
+
+.game{
+    @bgBlackField: #222;
+    @bgWhiteField: #f1f1f1;
+    
+    margin: 0 auto;
+    width: 900px;
+    height:100%;
+    
+    &.black{
+        td{
+            &:hover, &:active{
+                background: @bgBlackField;
+            }
+            &.active{
+                background: @bgBlackField;
+            }
+        }
+    }
+    
+    &.white{
+        td{
+            &:hover, &:active{
+                background: @bgWhiteField;
+            }
+            &.active{
+                background: @bgWhiteField;
+            }
+        }
+    }
+    
+    &__field{
+        width: 100%;
+        height:100%;
+        
+        td{
+            background: #ccc;
+            border: 1px solid #222;
+            border-collapse: collapse;
+            padding: 20px;
+            cursor: pointer;
+            transition: 0.5s all;
+            
+            &.black{
+                background: @bgBlackField !important;
+                cursor: default;
+            }
+            &.white{
+                background: @bgWhiteField !important;
+                cursor: default;
+            }
+        }
+
+    }
+}
+
+.rules{
+    position: absolute;
+    top: 10px;
+    right: 2%;
+    width: 17%;
+}
+
+[class^="layout"]{
+    background: rgba(0,0,0, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    display: none;
+    padding-top: 50px;
+}
+
+@media screen and (max-width:1500px) {
+    .rules{
+        position: static;
+        width: auto;
+    }
+}

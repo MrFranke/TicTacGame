@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Х/О</title>
+    
+    <!--Шрифты-->
+    <link href='http://fonts.googleapis.com/css?family=Andika' rel='stylesheet' type='text/css'>
+    
+    <!--Стили-->
+    <link rel="stylesheet/less" type="text/css" href="/style/main.less">
+    
+    <!--Библиотеки-->
+    <script src="/js/libs/less.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/js/libs/textEffect.js" type="text/javascript"></script>
+    <script src="/js/libs/underscore.js" type="text/javascript"></script>
+    <script src="/js/libs/backbone.js" type="text/javascript"></script>
+    <script src="/js/libs/socket.io.min.js" type="text/javascript"></script>
+    
+    <!--Подключение остальных скриптов через require-->
+    <script data-main="/js/main" src="/js/libs/require.js"></script>
+    <script>
+        require.config({
+            baseUrl: '/js/'
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="layout__connecting">
+        Подключаюсь к серверу
+    </div>
+
+    <div class="layout__connect">
+        Соединение законченно, введите данные игрока
+        <form>
+            Имя игрока:
+            <input type="text" name="" id="name" placeholder="Имя" class="js-set-name-input">
+            <br>
+            <button class="js-set-name">Начать игру</button>
+        </form>
+    </div>
+
+    <div class="layout__find-opponent">
+        Ищем соперника
+    </div>
+
+    <div class="layout__waitOpponent">
+        Ждем соперника...
+    </div>
+
+    <div class="layout__win">
+        Выйграл игрок: <span class="js-player-win"></span>
+    </div>
+
+    <div class="game black">
+        <table class="game__field js-game-field">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="players">
+        <div class="players__player">
+            <h3>Игрок:</h3>
+            Имя: <span class="name">Franke</span> <br>
+        </div>
+        
+        <div class="players__opponent">
+            <h3>Противник:</h3>
+            Имя: <span class="name">Franke</span> <br>
+        </div>
+    </div>
+    
+    <div class="rules">
+        <h3>Не знаете правила? Читайте:</h3>
+        <p>
+            Игроки по очереди ставят на свободные клетки поля 3х3 знаки (один всегда крестики, другой всегда нолики). <br>
+            Первый, выстроивший в ряд 3 своих фигуры по вертикали, горизонтали или диагонали, выигрывает. Первый ход делает игрок, ставящий крестики.
+        </p>
+        <p>
+            Обычно по завершении партии выигравшая сторона зачёркивает чертой свои три знака (нолика или крестика), составляющих сплошной ряд.
+        </p>
+    </div>
+</body>
+</html>
